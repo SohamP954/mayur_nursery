@@ -1,0 +1,1047 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #f9f8f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo img {
+   height: 75px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    min-width: 18rem;
+    max-width: 600px;
+    margin: 0 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.search-box button {
+    background-color: #1e4620;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.search-box button img {
+    height: 20px;
+    width: 20px;
+    filter: invert(1);
+}
+
+.chat-icon img {
+    height: 40px;
+    width: 40px;
+}
+
+/* Navigation Bar */
+
+nav {
+  background-color: #3e5f4c;
+  padding: 15px 0;
+  text-align: center;
+  padding-inline: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav > div.nav-logo > a > img {
+  aspect-ratio: 1;
+  height: 6rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.4);
+  
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin-inline: 2rem;
+}
+
+nav ul li {
+  display: inline;
+  /* margin: 0 15px; */
+}
+
+nav ul li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #f4d35e; /* Soft yellow underline */
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f4d35e; /* Text color on hover */
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hide nav when in welcome screen */
+.hide-nav {
+    top: -100px;
+}
+
+/* Header */
+header {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Background video styles */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+/* Animation for header text */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-title-animated {
+  animation: fadeSlideIn 1.2s ease-out;
+}
+
+.header-subtitle-animated {
+  animation: fadeSlideIn 1.5s ease-out;
+}
+
+/* Styling the content on top of the video */
+.header-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+header h1
+ {
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    font-size:3em;
+    font-family:'Quicksand', sans-serif;
+    background-color: rgba(255, 255, 255, 0.7); /* Whitish transparent background */
+    color: rgb(38 87 38); /* Optional: darker text color for better contrast */
+}
+
+header p {
+    font-size: 2.5em;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(255, 255, 255, 0.7); /* Whitish transparent background */
+    color: rgb(38 87 38); /* Optional: darker text color for better contrast */
+}
+
+
+.about-us-section {
+    background-color: #f1f8f4;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2e4d35;
+}
+
+.about-us-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-us-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #1e3d2f;
+}
+
+.about-us-section .intro {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #4a6e57;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.about-list li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.about-list li::before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* About gift Section */
+.gift-section {
+    background-color: #f1edf5;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .gift-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .gift-text {
+    flex: 1 1 500px;
+  }
+  
+  .gift-text h2 {
+    font-size: 42px;
+    color: #1a3c1a;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .gift-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  
+  .gift-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #1a3c1a;
+    color: #fff;
+    padding: 15px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .gift-button:hover {
+    background-color: #274e27;
+  }
+  
+  .gift-image {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+  
+  .gift-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .gift-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .gift-text, .gift-image {
+      flex: 1 1 100%;
+    }
+  
+    .gift-text h2 {
+      font-size: 32px;
+    }
+  }
+  
+  /* plant-sets-section */
+  .plant-sets-section {
+    background-color: #f9f9f6;
+    padding: 50px 20px;
+    
+  }
+  
+  .plant-sets-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .plant-sets-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .plant-sets-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .plant-sets-text {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 20px;
+  }
+  
+  .plant-sets-text h2 {
+    font-size: 2.5rem;
+    color: #1e4620;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .plant-sets-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .btn-shop {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #1e4620;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-shop:hover {
+    background-color: #143015;
+  }
+  
+
+/*office-plants-section*/
+.office-plants-section {
+    background-color: #f1f8f4; /* soft green background */
+    padding: 60px 20px;
+  }
+  
+  .office-plants-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .office-plants-text {
+    flex: 1 1 50%;
+    max-width: 550px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #214e2c;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .section-description.bold {
+    font-weight: 600;
+    color: #1f3f25;
+  }
+  
+  .office-button {
+    display: inline-block;
+    background-color: #214e2c;
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+
+  }
+  
+  .office-button:hover {
+    background-color: #183e21;
+  }
+  
+  .office-plants-image {
+    flex: 1 1 40%;
+    text-align: center;
+  }
+  
+  .office-plants-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  /*suggest-plant-section */
+  .suggest-plant-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    background-color: #f3f7f2;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 12px;
+  }
+  
+  .suggest-content {
+    flex: 1 1 400px;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  .suggest-content h2 {
+    font-size: 28px;
+    color: #2e5f41;
+    margin-bottom: 10px;
+  }
+  
+  .suggest-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .suggest-form input,
+  .suggest-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  
+  .suggest-form button {
+    background-color: #2e5f41;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .suggest-form button:hover {
+    background-color: #3b7552;
+  }
+  
+  .suggest-image {
+    flex: 1 1 300px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .suggest-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+/* Plant Category Icons Section */
+.plant-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 20px;
+    background-color: #f9f8f5;
+}
+
+.category-item {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-item img {
+    background-color: #fbeee5;
+    border-radius: 50%;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.category-item img:hover {
+    transform: scale(1.1);
+}
+
+.category-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* About Carousel */
+.about-carousel-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+}
+
+.about-carousel {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.about-carousel .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fade 25s infinite;
+}
+
+.about-carousel .slide:nth-child(1) { animation-delay: 0s; }
+.about-carousel .slide:nth-child(2) { animation-delay: 5s; }
+.about-carousel .slide:nth-child(3) { animation-delay: 10s; }
+.about-carousel .slide:nth-child(4) { animation-delay: 15s; }
+.about-carousel .slide:nth-child(5) { animation-delay: 20s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    4% { opacity: 1; }
+    20% { opacity: 1; }
+    24% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+    white-space: nowrap;
+}
+
+/* Bestseller Plants Section */
+.bestseller-plants {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #eef5ea;
+    /* Light green background */
+}
+
+/* Bestseller Gallery Grid */
+.bestseller-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 20px;
+    /* Space between items */
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Individual Bestseller Item */
+.bestseller-gallery a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+/* Bestseller Images */
+.bestseller-gallery img {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bestseller-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Bestseller Plant Titles */
+.bestseller-gallery p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+
+/* Cactus Page Specific */
+.cactus {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+.cactus h3 {
+    margin-bottom: 40px; /* adds space between the h3 and the gallery */
+    font-size: 24px;
+}
+.cactus-gallery {
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cactus-gallery img {
+    width: 270px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cactus-gallery img:hover {
+    transform: scale(1.05);
+}
+.cactus-gallery p 
+{
+  background-color: #eef5ea;
+    color: #2c786c;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Indoor Plants Page Specific */
+.indoor-plants {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+.indoor-plants h3 {
+    margin-bottom: 40px; /* adds space between the h3 and the gallery */
+    font-size: 24px;
+}
+
+.indoor-plants-gallery {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.indoor-plants-gallery img {
+    width: 270px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.indoor-plants-gallery img:hover {
+    transform: scale(1.05);
+}
+.indoor-plants-gallery p 
+{
+  background-color: #eef5ea;
+    color: #2c786c;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Outdoor Plants Page Specific */
+.outdoor-plants {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+.outdoor-plants h3 {
+    margin-bottom: 40px; /* adds space between the h3 and the gallery */
+    font-size: 24px;
+}
+.outdoor-plants-gallery {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.outdoor-plants-gallery img {
+    width: 270px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.outdoor-plants-gallery img:hover {
+    transform: scale(1.05);
+}
+.outdoor-plants-gallery p 
+{
+  background-color: #eef5ea;
+    color: #2c786c;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+/* Shrubs Page Specific */
+.shrubs-page {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.shrubs-page h3 {
+    margin-bottom: 40px; /* adds space between the h3 and the gallery */
+    font-size: 24px;
+}
+
+.shrubs-gallery {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shrubs-gallery img {
+    width: 270px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.shrubs-gallery img:hover {
+    transform: scale(1.05);
+}
+.shrubs-gallery p 
+{
+  background-color: #eef5ea;
+    color: #2c786c;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Showcase */
+.showcase-plants {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+.showcase-plants h3 {
+    margin-bottom: 40px; /* adds space between the h3 and the gallery */
+    font-size: 24px;
+}
+.showcase-plants-gallery {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.showcase-plants-gallery img {
+    width: 270px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.showcase-plants-gallery img:hover {
+    transform: scale(1.05);
+}
+.showcase-plants-gallery p 
+{
+  background-color: #eef5ea;
+    color: #2c786c;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Water Plants */
+.water-plants {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+.water-plants h3 {
+    margin-bottom: 40px; /* adds space between the h3 and the gallery */
+    font-size: 24px;
+}
+
+.water-plants-gallery {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.water-plants-gallery img {
+    width: 270px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.water-plants-gallery img:hover {
+    transform: scale(1.05);
+}
+.water-plants-gallery p 
+{
+  background-color: #eef5ea;
+    color: #2c786c;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+/* Google Maps Button */
+.google-maps-icon {
+    position: fixed;
+    bottom: 140px;
+    /* Above WhatsApp button */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.google-maps-icon img {
+    width: 30px;
+    /* Adjust size */
+    height: 30px;
+}
+
+.google-maps-icon:hover {
+    transform: scale(1.1);
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 55px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-icon a {
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Plant Gallery */
+.plant-gallery {
+    padding: 50px;
+    text-align: center;
+}
+
+.plant-gallery .plant-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.plant-gallery .plant-images img {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .plant-gallery .plant-images {
+        flex-direction: column;
+    }
+
+    .whatsapp-icon {
+        padding: 10px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
